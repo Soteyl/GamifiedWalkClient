@@ -27,25 +27,17 @@ class MyApp extends StatelessWidget {
       },
       theme: ThemeData(
         useMaterial3: true,
-
-        // Define the default brightness and colors.
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.purple,
-          // ···
-          brightness: Brightness.dark,
+          seedColor: Colors.teal,
+          brightness: Brightness.light,
         ),
-
-        // Define the default `TextTheme`. Use this to specify the default
-        // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
           displayLarge: const TextStyle(
-            fontSize: 72,
+            fontSize: 60,
             fontWeight: FontWeight.bold,
           ),
-          titleLarge: GoogleFonts.oswald(
-            fontSize: 30,
-            fontStyle: FontStyle.italic,
-          ),
+          titleLarge:
+              GoogleFonts.oswald(fontSize: 25, fontStyle: FontStyle.italic),
           bodyMedium: GoogleFonts.merriweather(),
           displaySmall: GoogleFonts.pacifico(),
         ),
@@ -64,11 +56,14 @@ class HomePage extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
+            DrawerHeader(
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondaryContainer),
               child: Text(
                 'Menu',
-                style: TextStyle(color: Colors.white, fontSize: 24),
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSecondaryContainer,
+                    fontSize: 24),
               ),
             ),
             ListTile(
